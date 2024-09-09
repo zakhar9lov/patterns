@@ -58,7 +58,7 @@ func IncreaseSalaries(id int, wg *sync.WaitGroup, jobs <-chan *Employee, results
 			job.Salary = job.Salary + job.Salary*0.2
 			results <- fmt.Sprintf("Goroutine №%d: Successfuly!", id)
 		} else {
-			errs <- fmt.Errorf("Goroutine №:%d Failed!", id)
+			errs <- fmt.Errorf("goroutine №:%d Failed", id)
 		}
 
 		time.Sleep(1 * time.Second)
